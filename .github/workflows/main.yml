@@ -11,7 +11,7 @@ jobs:
       id: read
       uses: rcbat73/push-to-remote-with-credentials@master
       with:
-        credentials: ${{ secrets.CREDENTIALS }}
+        credentials: ${{ secrets.USER_CREDENTIALS }}
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.read.outputs.time }}"
