@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Read credentials
       id: read
-      uses: actions/push-to-remote-with-credentials@v1
+      uses: uxdx-test/push-to-remote-with-credentials@master
       with:
         credentials: ${{ secrets.CREDENTIALS }}
     # Use the output from the `hello` step
