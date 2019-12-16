@@ -1,0 +1,17 @@
+name: Test push to a remote repository
+
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to push to a remote repository
+    steps:
+    - name: Read credentials
+      id: read
+      uses: actions/push-to-remote-with-credentials@v1
+      with:
+        credentials: ${{ secrets.CREDENTIALS }}
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.read.outputs.time }}"
